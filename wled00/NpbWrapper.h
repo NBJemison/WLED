@@ -6,7 +6,7 @@
 #ifndef LEDPIN
 #define LEDPIN 2  //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
 #endif
-//#define USE_APA102  // Uncomment for using APA102 LEDs.
+#define USE_APA102  // Uncomment for using APA102 LEDs.
 //#define USE_WS2801  // Uncomment for using WS2801 LEDs (make sure you have NeoPixelBus v2.5.6 or newer)
 //#define USE_LPD8806 // Uncomment for using LPD8806
 //#define USE_TM1814  // Uncomment for using TM1814 LEDs (make sure you have NeoPixelBus v2.5.7 or newer)
@@ -52,10 +52,10 @@
 
 #if defined(USE_APA102) || defined(USE_WS2801) || defined(USE_LPD8806) || defined(USE_P9813)
  #ifndef CLKPIN
-  #define CLKPIN 0
+  #define CLKPIN 18
  #endif
  #ifndef DATAPIN
-  #define DATAPIN 2
+  #define DATAPIN 23
  #endif
  #if BTNPIN == CLKPIN || BTNPIN == DATAPIN
   #undef BTNPIN   // Deactivate button pin if it conflicts with one of the APA102 pins.
